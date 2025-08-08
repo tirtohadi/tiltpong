@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilt Pong</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <h1 class="game-title">Tilt Pong</h1>
+            
+            <div class="game-modes">
+                <button id="one-player-btn" class="mode-btn">1 Player Mode</button>
+                <button id="two-player-btn" class="mode-btn">2 Player Mode</button>
+                <button id="about-btn" class="mode-btn about-btn">About</button>
+            </div>
+            
+            <div class="settings-panel">
+                <div class="setting-group">
+                    <label for="ball-speed">Ball Speed:</label>
+                    <input type="range" id="ball-speed" min="4" max="20" value="10" class="slider">
+                    <span id="ball-speed-value">10</span>
+                </div>
+                
+                <div class="setting-group" id="ai-difficulty-group">
+                    <label for="ai-difficulty">AI Difficulty:</label>
+                    <select id="ai-difficulty" class="difficulty-select">
+                        <option value="easy">Easy</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h3>Controls:</h3>
+                <p><strong>1 Player Mode:</strong> Use W/S (move) | A/D (tilt)</p>
+                <p><strong>2 Player Mode:</strong> Player 1: W/S (move) | A/D (tilt)</p>
+                <p><strong>2 Player Mode:</strong> Player 2: ↑↓ (move) | ←→ (tilt)</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Game Screen -->
+    <div id="game-screen" class="game-screen hidden">
+        <div class="game-header">
+            <div class="score-board">
+                <div class="player-score">
+                    <span class="player-name">Player 1</span>
+                    <span id="player1-score">0</span>
+                </div>
+                <div class="vs">VS</div>
+                <div class="player-score">
+                    <span class="player-name" id="player2-name">AI</span>
+                    <span id="player2-score">0</span>
+                </div>
+            </div>
+            <button id="back-to-menu" class="menu-btn">Back to Menu</button>
+        </div>
+        
+        <canvas id="game-canvas" width="800" height="400"></canvas>
+        
+        <!-- Press Space to Start Screen -->
+        <div id="start-game-screen" class="start-game-screen">
+            <div class="start-content">
+                <h2>Press SPACE to Start</h2>
+                <div class="control-instructions">
+                    <h3>Controls:</h3>
+                    <p><strong>Player 1:</strong> W/S (move) | A/D (tilt)</p>
+                    <p><strong>Player 2:</strong> ↑↓ (move) | ←→ (tilt)</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-controls">
+            <p id="game-instructions">Use W/S to move, A/D to tilt your paddle</p>
+        </div>
+    </div>
+    
+    <!-- About Us Screen -->
+    <div id="about-screen" class="about-screen hidden">
+        <div class="about-content">
+            <h2>About Tilt Pong</h2>
+            <div class="about-text">
+                <p>🏓 A modern twist on the classic Pong game!</p>
+                <p>🎮 Features paddle tilting for advanced ball control</p>
+                <p>🤖 AI opponent with adjustable difficulty</p>
+                <p>⚡ Dynamic ball speed and physics</p>
+                <br>
+                <p class="credits">✨ Vibe coded by <strong>TirtongEA</strong> ✨</p>
+            </div>
+            <button id="back-to-menu-btn" class="action-btn">Back to Menu</button>
+        </div>
+    </div>
+    
+    <!-- Game Over Screen -->
+    <div id="game-over-screen" class="game-over-screen hidden">
+        <div class="game-over-content">
+            <h2 id="winner-text">Player 1 Wins!</h2>
+            <div class="final-score">
+                <span id="final-player1-score">0</span> - <span id="final-player2-score">0</span>
+            </div>
+            <div class="game-over-buttons">
+                <button id="play-again-btn" class="action-btn">Play Again</button>
+                <button id="new-game-btn" class="action-btn">New Game</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ball.js?v=3"></script>
+    <script src="js/paddle.js?v=3"></script>
+    <script src="js/ai.js?v=3"></script>
+    <script src="js/ui.js?v=3"></script>
+    <script src="js/game.js?v=3"></script>
+</body>
+</html>
