@@ -1,4 +1,4 @@
-# Albert's Pong Game
+# Tilt Pong Game
 
 A modern, web-based Pong game built with HTML5 Canvas and vanilla JavaScript. Features both single-player AI mode and two-player local multiplayer.
 
